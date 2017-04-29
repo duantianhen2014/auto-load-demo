@@ -47,7 +47,21 @@
 
 在web服务器中, 将项目根目录配置到 '保存位置/auto-load-demo/public'
 
-代码中 public 下的入口文件 index.php 开始,我在代码中进行了非常详细的注释
+如果没有 Web 服务器的话也没关系,只要有 PHP 环境就可以了, 直接用 PHP 启动服务即可
+
+示例: 
+
+```shell
+# 路径根据实际环境,这个是我的环境
+$ cd /home/bro/www/localServer/auto-load-demo/public
+
+# 通过 PHP 内置的web服务启动
+$ php -S localhost:8888
+```
+
+浏览器直接输入 http://localhost:8888 即可访问
+
+代码中从 public 下的入口文件 index.php 开始,我在代码中进行了非常详细的注释
 
 
 ## 更新日志
