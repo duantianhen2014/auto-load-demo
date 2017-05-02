@@ -1,36 +1,25 @@
 <?php 
-/**
- * 本示例的入口文件
- * 此项目的目的是为了实现 PHP 的自动加载, 只是用来学习
- * 实际代码中可以直接使用 composer 即可,既简单,又强大
- * 
- */
 
 /**
- * 定义项目根目录
+ * 设置显示错误信息，为了方便调试
  */
-define('ROOT_PATH', dirname(__DIR__));
+ini_set('display_errors', 1);
 
 /**
- * 是否开启 debug
- * 没有太多功能,如果开启 debug 会支持输出错误, 不开启将错误记录到日志
+ * 处理类及文件自动加载
  */
-define('DEBUG', true);
-
+require_once __DIR__ . '/../bootstrap/autoload.php';
 
 
 /**
- * 引入自动引入的文件, 执行完这个就会将需要加载的文件加载
+ * New 一下下面几个目录中的类, 里面没有什么，只有个构造方法打印信息, 打印出来证明已经加载上了
  */
-require ROOT_PATH . DIRECTORY_SEPARATOR . 'bootstrap' . DIRECTORY_SEPARATOR . 'autoload.php';
+new \BroQiang\Application;
 
-/**
- * 初始化的业务逻辑, 代码逻辑在此处开始
- */
-require ROOT_PATH . DIRECTORY_SEPARATOR . 'bootstrap' . DIRECTORY_SEPARATOR . 'app.php';
+new \BroQiang\Core\App;
 
+new \App\Controllers\Controller;
 
-
-
-
-
+// 这个测试通过 use 方式引入类
+use App\Models\Model;
+new Model;

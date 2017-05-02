@@ -1,4 +1,5 @@
-<?php
+<?php 
+
 
 /**
  * 用来测试的函数, 方便打印看起来方便的
@@ -15,17 +16,4 @@ function p($val = null, string $title = null)
     echo "<pre>";
     var_dump($val);
     echo "</pre><br>";
-}
-
-function setReporting()
-{
-    if (DEBUG) {
-        error_reporting(E_ALL);
-        ini_set('display_errors', 'On');
-    } else {
-        error_reporting(E_ALL);
-        ini_set('display_errors', 'Off');
-        ini_set('log_errors', 'On');
-        ini_set('error_log', ROOT_PATH . DIRECTORY_SEPARATOR . 'storage' . DIRECTORY_SEPARATOR . 'logs' . DIRECTORY_SEPARATOR . 'errors.log');
-    }
 }
